@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML App
+		</div>
+		<h2>Spam Detection For Youtube Comments</h2>
+
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>YouTube Spam Comments detection</b></p>
+
+	
+
+	<div class="results">
+
+	<h2 style="color:red";>spam</h2><br>
+	{% for item in data[0] %}
+        <p>{{item}}</p><br>
+    {% endfor %}
+
+	<h2 style="color:blue;">Not spam</h2><br>
+	{% for item in data[1] %}
+        <p>{{item}}</p><br>
+    {% endfor %}
+	</div>
+	
+
+</body>
+</html>
